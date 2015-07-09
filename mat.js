@@ -435,7 +435,7 @@
 
 		setTimeout(function(){
 			remotePeerConnection.send(JSON.stringify({ deck: myCards }));
-		}, 250);
+		}, 3000); // TODO this isn't really working
 
 		if ( userCode === 1 ) {
 			flipOpponent(0);
