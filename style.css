@@ -1,0 +1,166 @@
+
+	* {
+		border: 0;
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		background: #FCFEF5;
+		padding-bottom: 150px;
+	}
+
+	.points,
+	.row {
+		display: block;
+		position: relative;
+		margin: 15px auto 0;
+		width: 1218px;
+	}
+
+	.box {
+		width: 162px;
+		height: 272px;
+		display: inline-block;
+		vertical-align: top;
+		border-radius: 4px;
+	}
+
+	.field {
+		position: relative;
+		border: 1px solid #CCC;
+		margin: 0 2px;
+	}
+
+	.field:first-child {
+		margin-right: 30px;
+	}
+	.field:last-child {
+		margin-left: 30px;
+	}
+
+	.tools {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: 5;
+		padding: 2px;
+	}
+	.tools:last-child {
+		display: none;
+	}
+	.tool {
+		display: inline-block;
+		color: Blue;
+		padding: 3px;
+		font: 700 16px/22px Arial;
+		border: 1px solid #CCC;
+		background-color: #EEE;
+		margin-left: 2px;
+		width: 26px;
+		text-align: center;
+	}
+	.tool:hover {
+		background-color: #FFE7A7;
+	}
+	.tool.token-field {
+		width: 40px;
+	}
+
+	.card {
+		text-align: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		width: 160px;
+		height: 235px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-image: url(http://img3.wikia.nocookie.net/__cb20130902115200/yugioh/images/e/ee/Back-ZX-Site.png);
+	}
+	.card:nth-child(2) {
+		z-index: 2;
+	}
+
+	/* Closed */
+	.field[state="1"] .card:not(:hover),
+	.field[state="3"] .card:not(:hover) {
+		background-image: url(http://img3.wikia.nocookie.net/__cb20130902115200/yugioh/images/e/ee/Back-ZX-Site.png) !important;
+	}
+	/* Landscape */
+	.field[state="2"] .card,
+	.field[state="3"] .card {
+		transform: rotate(90deg);
+	}
+
+	#pointfields,
+	#deck,
+	#cards {
+		display: none;
+	}
+	#deck.show {
+		display: block;
+	}
+
+
+	.field.hand {
+		width: 100%;
+		margin: 0;
+		justify-content: center;
+	}
+
+	.row.sub,
+	.field.hand {
+		display: flex;
+	}
+
+	.row.sub {
+		flex-wrap: wrap;
+	}
+
+	.row.sub .card,
+	.field.hand .card {
+		position: static;
+		margin: 3px;
+	}
+
+	.field.js-waved-open {
+		background: purple;
+	}
+	body.js-waved-open .row:not(.sub) {
+		opacity: 0.3;
+	}
+	.row.sub:empty {
+		display: none;
+	}
+
+	.type-deck { background: #999; }
+	.type-monster { background: #E9FFE1; }
+	.type-spell { background: #D6E6C3; }
+	.type-hand { background: #FFF; }
+	.type-field { background: #FAFBE3; }
+	.type-graveyard { background: #CDCFB7; }
+	.type-graveyard .card:last-child {
+		z-index: 10;
+	}
+
+	.deck:first-child {
+		border-bottom: 3px solid #999;
+		padding-bottom: 15px;
+	}
+
+	.points span {
+		font: 400 14px Arial;
+	}
+	.points_field {
+		background: none;
+		padding: 5px;
+		font: 400 80px Arial;
+	}
