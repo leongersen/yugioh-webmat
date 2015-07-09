@@ -117,7 +117,10 @@
 		var cardElement = cardElements[cardID];
 
 		cardElement.addEventListener('mousedown', function( e ){
+			
+			if ( !isViewField(cardElements[cardID]['data-at-field']) ) return;
 			if ( e.buttons !== 2 ) return true;
+			
 			var x = window.open(model.cards[cardID][1], 'cardViewer', 'height=500,width=400');
 			return false;
 		});
